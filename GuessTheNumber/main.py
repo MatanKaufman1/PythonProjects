@@ -2,9 +2,10 @@ from replit import clear
 from ascii import logo
 import random
 
-random_num = random.randint(1,100)
-NO_LIVES ="You run out of guesses, you lose"
+random_nums = random.randint(1, 100)
+NO_LIVES = "You run out of guesses, you lose"
 LOGO = logo
+
 
 def easy():
     print(LOGO)
@@ -24,7 +25,7 @@ def easy():
             print("Too high\nGuess again")
 
         elif user_num < random_num:
-            lives-= 1
+            lives -= 1
             print(f"You have {lives} attempts remaining to guess the numebr")
             if lives == 0:
                 print(NO_LIVES)
@@ -35,6 +36,7 @@ def easy():
             print(f"You win! the number is {random_num}")
             print(f"You survived with {lives} attempts remaining to guess the numebr")
             game_end = True
+
 
 def hard():
     print(LOGO)
@@ -66,6 +68,7 @@ def hard():
             print(f"You survived with {lives} attempts remaining to guess the numebr")
             game_end = True
 
+
 stop_play = False
 while not stop_play:
     difficulty = input("Choose a difficulty. Type 'easy' or 'hard' to guess the number. ")
@@ -73,6 +76,3 @@ while not stop_play:
         easy()
     elif difficulty == 'hard':
         hard()
-
-
-
